@@ -13,7 +13,7 @@ def _clean_str(value) -> Optional[str]:
     return cleaned if cleaned else None
 
 
-def _fix_chapter_id(chapter_id : Optional[str]) -> Optional[str]:
+def _fix_chapter_id(chapter_id: Optional[str]) -> Optional[str]:
     """
     Fix malformed ChapterID values found in source data.
     - "GA0147"  → "GA-0147"  (missing hyphen)
@@ -21,7 +21,7 @@ def _fix_chapter_id(chapter_id : Optional[str]) -> Optional[str]:
     """
     if not chapter_id:
         return None
-    #Insert hyphen if missing eg.GA0147 -> GA-0147
+    # Insert hyphen if missing eg.GA0147 -> GA-0147
     fixed = re.sub(r'^([A-Z]{2})(\d+)$', r'\1-\2', chapter_id)
 
     return fixed
@@ -29,11 +29,11 @@ def _fix_chapter_id(chapter_id : Optional[str]) -> Optional[str]:
 
 def extract_fields(feature: dict) -> Optional[dict]:
     """Turn one raw API feature into a clean flat dictionary."""
-    attrs    = feature.get("attributes",{})
-    geometry = feature.get("geometry",{})
+    attrs = feature.get("attributes", {})
+    geometry = feature.get("geometry", {})
 
-    longitude    = geometry.get("x")
-    latitude     = geometry.get("y")
+    longitude = geometry.get("x")
+    latitude = geometry.get("y")
 
     return {
         "chapter_id":   _fix_chapter_id(_clean_str(attrs.get("ChapterID"))),

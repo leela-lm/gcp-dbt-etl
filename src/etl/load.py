@@ -13,7 +13,7 @@ SCHEMA = [
 ]
 
 
-def load_to_bigquery(rows: list[dict], project_id: str,dataset_id: str,table_id: str) -> None:
+def load_to_bigquery(rows: list[dict], project_id: str, dataset_id: str, table_id: str) -> None:
     client = bigquery.Client(project=project_id)
     table_ref = f"{project_id}.{dataset_id}.{table_id}"
 
@@ -27,6 +27,6 @@ def load_to_bigquery(rows: list[dict], project_id: str,dataset_id: str,table_id:
         write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
     )
 
-    job = client.load_table_from_json(rows,table_ref,job_config=job_config)
+    job = client.load_table_from_json(rows, table_ref, job_config=job_config)
     job.result()
     log.info(f"Loaded {len(rows)} rows → {table_ref}")
