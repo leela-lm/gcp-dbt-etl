@@ -31,6 +31,11 @@ jobs:
     name: Deploy and Run ETL
     runs-on: ubuntu-latest
     needs: test-and-lint                        # only runs if tests pass
+    env:
+        GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        BQ_RAW_DATASET: ${{ secrets.BQ_RAW_DATASET }}
+        BQ_RAW_TABLE: ${{ secrets.BQ_RAW_TABLE }}
+        DUCKS_API_URL: ${{ secrets.DUCKS_API_URL }}
 
     steps:
       - name: Checkout code
@@ -51,17 +56,8 @@ jobs:
 
       - name: Run ETL pipeline
         run: python -m src.etl.pipeline
-        env:
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          BQ_RAW_DATASET: ${{ secrets.BQ_RAW_DATASET }}
-          BQ_RAW_TABLE: ${{ secrets.BQ_RAW_TABLE }}
-          DUCKS_API_URL: ${{ secrets.DUCKS_API_URL }}
-
 
       - name: Run dbt models
-        working-directory: dbt_project
-        env:
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        working-directory: dbt_gcp_project
         run: |
-          dbt deps
           dbt run
