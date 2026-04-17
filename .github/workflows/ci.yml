@@ -47,7 +47,7 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
         with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          credentials_json: ${{ secrets.GCP_KEY }}
 
       - name: Run ETL pipeline
         run: python -m src.etl.pipeline
@@ -55,7 +55,7 @@ jobs:
       - name: Run dbt models
         working-directory: dbt_project
         env:
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT }}
         run: |
           dbt deps
           dbt run
