@@ -1,0 +1,69 @@
+[0m20:03:27.167509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6D945BBE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6DA7D8550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6DA7D8370>]}
+
+
+============================== 20:03:27.171550 | 1cf7c755-a922-4b38-b2a9-6f4e62818f78 ==============================
+[0m20:03:27.171550 [info ] [MainThread]: Running with dbt=1.11.8
+[0m20:03:27.173523 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Ravi\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init dbt_gcp_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:03:27.204777 [debug] [MainThread]: Starter project path: D:\Demo\gcp-dbt-etl\venv\lib\site-packages\dbt\include\starter_project
+[0m20:03:27.224770 [info ] [MainThread]: 
+Your new dbt project "dbt_gcp_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:03:27.225775 [info ] [MainThread]: Setting up your profile.
+[0m20:04:38.944595 [info ] [MainThread]: Profile dbt_gcp_project written to C:\Users\Ravi\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:04:38.947621 [debug] [MainThread]: Command `dbt init` succeeded at 20:04:38.947621 after 71.96 seconds
+[0m20:04:38.949625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6D945BBE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6DA7D8310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6EB57EF50>]}
+[0m20:04:38.951598 [debug] [MainThread]: Flushing usage events
+[0m20:04:39.431673 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:04:53.399775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D3239DBC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D324D70550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D324D70370>]}
+
+
+============================== 20:04:53.403812 | b0281ba2-d500-4b65-9673-d79a24d2da5b ==============================
+[0m20:04:53.403812 [info ] [MainThread]: Running with dbt=1.11.8
+[0m20:04:53.404775 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Ravi\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:04:53.449999 [info ] [MainThread]: dbt version: 1.11.8
+[0m20:04:53.450988 [info ] [MainThread]: python version: 3.10.2
+[0m20:04:53.452037 [info ] [MainThread]: python path: D:\Demo\gcp-dbt-etl\venv\Scripts\python.exe
+[0m20:04:53.453062 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m20:04:55.055885 [info ] [MainThread]: Using profiles dir at C:\Users\Ravi\.dbt
+[0m20:04:55.056871 [info ] [MainThread]: Using profiles.yml file at C:\Users\Ravi\.dbt\profiles.yml
+[0m20:04:55.058040 [info ] [MainThread]: Using dbt_project.yml file at D:\Demo\gcp-dbt-etl\dbt_project.yml
+[0m20:04:55.059074 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m20:04:55.061129 [debug] [MainThread]: Command `dbt debug` failed at 20:04:55.061129 after 1.84 seconds
+[0m20:04:55.063089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D3239DBC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D324D63790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D335E70DF0>]}
+[0m20:04:55.065083 [debug] [MainThread]: Flushing usage events
+[0m20:04:55.499014 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:07:40.805481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA78C7BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA8C3C520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA8C3C340>]}
+
+
+============================== 20:07:40.813475 | 9e9b81a9-1efa-45a3-9fcc-597519cc6127 ==============================
+[0m20:07:40.813475 [info ] [MainThread]: Running with dbt=1.11.8
+[0m20:07:40.815490 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Ravi\\.dbt', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:07:40.863486 [info ] [MainThread]: dbt version: 1.11.8
+[0m20:07:40.866486 [info ] [MainThread]: python version: 3.10.2
+[0m20:07:40.868473 [info ] [MainThread]: python path: D:\Demo\gcp-dbt-etl\venv\Scripts\python.exe
+[0m20:07:40.870490 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m20:07:44.824171 [info ] [MainThread]: Using profiles dir at C:\Users\Ravi\.dbt
+[0m20:07:44.826190 [info ] [MainThread]: Using profiles.yml file at C:\Users\Ravi\.dbt\profiles.yml
+[0m20:07:44.831186 [info ] [MainThread]: Using dbt_project.yml file at D:\Demo\gcp-dbt-etl\dbt_project.yml
+[0m20:07:44.834169 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m20:07:44.840190 [debug] [MainThread]: Command `dbt debug` failed at 20:07:44.839181 after 4.41 seconds
+[0m20:07:44.842187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA78C7BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA8C3C610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DA8C2F790>]}
+[0m20:07:44.845185 [debug] [MainThread]: Flushing usage events
+[0m20:07:46.251214 [debug] [MainThread]: An error was encountered while trying to flush usage events

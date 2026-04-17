@@ -1,0 +1,26 @@
+
+name: 'dbt_gcp_project'
+version: '1.0.0'
+
+profile: 'dbt_gcp_project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+models:
+  dbt_gcp_project:
+    # Config indicated by + and applies to all files under models/example/
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+      +schema: ducks_analytics

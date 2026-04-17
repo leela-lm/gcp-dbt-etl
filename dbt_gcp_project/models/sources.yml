@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: du_raw
+    database: ducks-etl-project
+    schema: ducks_raw
+    tables:
+      - name: ducks_chapters

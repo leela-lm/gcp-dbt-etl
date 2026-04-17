@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_ducks_chapters
+    description: "Staging model for Ducks Unlimited university chapters"
+
+    columns:
+      - name: chapter_id
+        description: "Unique identifier for each chapter"
+        tests:
+          - not_null
+          - unique
+
+      - name: city
+        tests:
+          - not_null
+
+      - name: state
+        tests:
+          - not_null
