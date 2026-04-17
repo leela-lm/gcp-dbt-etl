@@ -59,5 +59,4 @@ jobs:
 
       - name: Run dbt models
         working-directory: dbt_gcp_project
-        run: |
-          dbt run
+        run: dbt run --profiles-dir .
