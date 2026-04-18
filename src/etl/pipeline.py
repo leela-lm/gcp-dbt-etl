@@ -22,6 +22,7 @@ def run():
 
         # 2. Transform
         clean_data = transform_chapters(raw_data)
+        log.info("Transform step completed")
 
         # 3. Load
         load_to_bigquery(
@@ -30,6 +31,7 @@ def run():
             dataset_id=settings.raw_dataset,
             table_id=settings.raw_table,
         )
+        log.info("Load step completed")
 
         log.info("ETL pipeline finished successfully")
 

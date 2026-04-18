@@ -46,6 +46,7 @@ def extract_fields(feature: dict) -> Optional[dict]:
 
 
 def transform_chapters(raw_features: list[dict]) -> list[dict]:
+    log.info(f"Transforming {len(raw_features)} records...")
     transformed = [extract_fields(f) for f in raw_features]
-    log.info(f"Transformed {len(transformed)} records")
+    log.info(f"Transformed {len(transformed)} records successfully")
     return transformed

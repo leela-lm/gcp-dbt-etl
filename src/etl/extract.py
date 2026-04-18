@@ -4,11 +4,6 @@ import requests
 
 log = logging.getLogger(__name__)
 
-# API_URL = (
-#    "https://services2.arcgis.com/5I7u4SJE1vUr79JC/arcgis/rest/services"
-#    "/UniversityChapters_Public/FeatureServer/0/query"
-# )
-
 PARAMS = {
     "where":     "1=1",
     "outFields": "*",

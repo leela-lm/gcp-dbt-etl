@@ -14,6 +14,7 @@ SCHEMA = [
 
 
 def load_to_bigquery(rows: list[dict], project_id: str, dataset_id: str, table_id: str) -> None:
+    log.info(f"Loading {len(rows)} rows into BigQuery...")
     client = bigquery.Client(project=project_id)
     table_ref = f"{project_id}.{dataset_id}.{table_id}"
 
@@ -21,6 +22,7 @@ def load_to_bigquery(rows: list[dict], project_id: str, dataset_id: str, table_i
         bigquery.Dataset(f"{project_id}.{dataset_id}"),
         exists_ok=True
     )
+    log.info(f"Dataset {dataset_id} ready")
 
     job_config = bigquery.LoadJobConfig(
         schema=SCHEMA,
