@@ -15,7 +15,7 @@ DU ArcGIS API → Extract → Transform → Load → BigQuery (raw) → dbt → 
 1. **Extract** — fetches all university chapters from the DU ArcGIS FeatureServer API
 2. **Transform** — cleans whitespace, normalises ChapterID format
 3. **Load** — loads cleaned data into BigQuery raw dataset
-4. **dbt staging** — casts types and filters duplicates
+4. **dbt staging** — filters duplicates
 5. **dbt mart** — creates the final analytics table
 
 ---
